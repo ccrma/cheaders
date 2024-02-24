@@ -21,6 +21,5 @@ install(
 install(
     EXPORT cheadersTargets
     FILE cheadersTargets.cmake
-    NAMESPACE cheaders::
     DESTINATION lib/cmake/cheaders
 )
