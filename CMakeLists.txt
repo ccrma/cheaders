@@ -1,25 +1,9 @@
-cmake_minimum_required(VERSION 3.12)
-project(cheaders VERSION 1.0)
+# CMakeLists.txt in cheaders directory
 
-# Define the library target
-add_library(cheaders INTERFACE)
+# Define the library
+add_library(cheaders include/chugin.h)
 
-# Set include directories so that users can #include <header.h>
-target_include_directories(cheaders INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+set_target_properties(cheaders PROPERTIES LINKER_LANGUAGE CXX)
 
-# Installation instructions
-install(
-    TARGETS cheaders
-    EXPORT cheadersTargets
-)
-
-install(
-    DIRECTORY include/
-    DESTINATION include
-)
-
-install(
-    EXPORT cheadersTargets
-    FILE cheadersTargets.cmake
-    DESTINATION lib/cmake/cheaders
-)
+# Include the directory containing chugin.h
+target_include_directories(cheaders PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
