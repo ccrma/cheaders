@@ -1,4 +1,4 @@
-# CMakeLists.txt in cheaders directory
+# CMakeLists.txt for cheaders library
 
 # Define the library
 add_library(cheaders include/chugin.h)
